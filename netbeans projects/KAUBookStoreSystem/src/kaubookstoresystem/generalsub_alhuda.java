@@ -1,0 +1,1333 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package KAUBookStoreSystem;
+
+import static cpit251_project.generalsub_alkh.isls301;
+import cpit380practice.Picture;
+import javax.swing.ImageIcon;
+import cpit380practice.Picture;
+import java.awt.Color;
+import java.awt.Font;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.plaf.FontUIResource;
+
+/**
+ *
+ * @author manar
+ */
+public class generalsub_alhuda extends javax.swing.JFrame {
+ //pictures of the book
+static Picture isls301;
+static Picture isls201;
+static Picture isls401;
+static Picture arab201;
+static Picture arab101;
+static Picture isls101;
+//to check availablity of book
+static boolean avaisls301;
+static boolean avaisls201;
+static boolean avaisls401;
+static boolean avaarab201;
+static boolean avaarab101;
+static boolean avaisls101;
+//books
+static Book book;
+static Book book1;
+static Book book2;
+static Book book3;
+static Book book4;
+static Book book5;
+static Book book6;
+    /** Creates new form generalsub_alhuda */
+    public generalsub_alhuda() throws FileNotFoundException {
+        initComponents();
+             cart.setBackground(new Color(255, 255, 255, 100));
+        orders.setBackground(new Color(255, 255, 255, 100));
+        info.setBackground(new Color(255, 255, 255, 100));
+          File file = new File("Book.txt");
+        Scanner read = new Scanner (file);
+        boolean ava=false;
+        Book_linkedlist bl = new Book_linkedlist();
+        Book book = new Book();
+      while(read.hasNext()){
+          switch(read.next()){
+              case "100" : 
+        String info [] = read.next().split(",");
+         isls301 = new Picture ("isls301.jpg");
+        if(book.isAvailable(info[6])==true){
+            avaisls301=true;
+        }else{
+            avaisls301=false;
+        }
+        jisls301.setIcon(new ImageIcon(isls301.getImage().getScaledInstance(160, 160, 1)));
+         book1 = new Book(info[1],info[2],info[3],avaisls301,info[4],isls301);
+        bl.addBook(book1);
+        break;
+              case "101" :
+    String info1 [] = read.next().split(",");
+         isls201 = new Picture ("isls201.jpg");
+        if(book.isAvailable(info1[6])==true){
+            avaisls201=true;
+        }else{
+            avaisls201=false;
+        }
+         book2 = new Book(info1[1],info1[2],info1[3],avaisls201,info1[4],isls201);
+           jisls201.setIcon(new ImageIcon(isls201.getImage().getScaledInstance(160, 160, 1)));
+        bl.addBook(book2);
+        break;
+              case "102" :  String info2 [] = read.next().split(",");
+         isls401 = new Picture ("isls401.jpg");
+        if(book.isAvailable(info2[6])==true){
+            avaisls401=true;
+          
+        }else{
+            avaisls401=false;
+      
+        }
+       
+         book3 = new Book(info2[1],info2[2],info2[3],avaisls401,info2[4],isls401);
+           jisls401.setIcon(new ImageIcon(isls401.getImage().getScaledInstance(160, 160, 1)));
+        bl.addBook(book3);
+         break;
+            case "103" :  String info3 [] = read.next().split(",");
+         arab201 = new Picture ("arab201.png");
+        if(book.isAvailable(info3[6])==true){
+            avaarab201=true;
+        }else{
+            avaarab201=false;
+        }
+         book4 = new Book(info3[1],info3[2],info3[3],avaarab201,info3[4],arab201);
+           jarab201.setIcon(new ImageIcon(arab201.getImage().getScaledInstance(160, 160, 1)));
+        bl.addBook(book4);break;
+            case "104" :  String info4 [] = read.next().split(",");
+         arab101 = new Picture ("arab101.jpg");
+        if(book.isAvailable(info4[6])==true){
+            avaarab101=true;
+        }else{
+            avaarab101=false;
+        }
+         book5 = new Book(info4[1],info4[2],info4[3],avaarab101,info4[4],arab101);
+           jarab101.setIcon(new ImageIcon(arab101.getImage().getScaledInstance(160, 160, 1)));
+        bl.addBook(book5);break;
+            case "105" :
+           String info5 [] = read.next().split(",");
+         isls101 = new Picture ("isls101.jpg");
+        if(book.isAvailable(info5[6])==true){
+            avaisls101=true;
+        }else{
+            avaisls101=false;
+        }
+         book6 = new Book(info5[1],info5[2],info5[3],avaisls101,info5[4],arab101);
+           jisls101.setIcon(new ImageIcon(isls101.getImage().getScaledInstance(160, 160, 1)));
+        bl.addBook(book6);break;
+    
+    }}}
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        cart = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        orders = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        info = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        search = new javax.swing.JTextPane();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jarab201 = new javax.swing.JLabel();
+        incarab201 = new javax.swing.JButton();
+        decarab201 = new javax.swing.JButton();
+        arab201_price = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jisls201 = new javax.swing.JLabel();
+        incisls201 = new javax.swing.JButton();
+        isls401_price = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        decisls401 = new javax.swing.JButton();
+        jisls401 = new javax.swing.JLabel();
+        incisls401 = new javax.swing.JButton();
+        isls201_price = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        decisls201 = new javax.swing.JButton();
+        jarab101 = new javax.swing.JLabel();
+        inisls301 = new javax.swing.JButton();
+        isls301_price = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        deisls301 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jisls301 = new javax.swing.JLabel();
+        incarab101 = new javax.swing.JButton();
+        decarab101 = new javax.swing.JButton();
+        arab101_price = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jisls101 = new javax.swing.JLabel();
+        incisls101 = new javax.swing.JButton();
+        decisls01 = new javax.swing.JButton();
+        arab101_price1 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel3.setFont(new java.awt.Font("AR JULIAN", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel3.setText("ثة");
+
+        jPanel3.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        cart.setBackground(new java.awt.Color(255, 204, 102));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("Cart");
+
+        javax.swing.GroupLayout cartLayout = new javax.swing.GroupLayout(cart);
+        cart.setLayout(cartLayout);
+        cartLayout.setHorizontalGroup(
+            cartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cartLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cartLayout.setVerticalGroup(
+            cartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cartLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jLabel2)
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+
+        orders.setBackground(new java.awt.Color(255, 204, 102));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("Orders");
+
+        javax.swing.GroupLayout ordersLayout = new javax.swing.GroupLayout(orders);
+        orders.setLayout(ordersLayout);
+        ordersLayout.setHorizontalGroup(
+            ordersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ordersLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(78, 78, 78))
+        );
+        ordersLayout.setVerticalGroup(
+            ordersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ordersLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel4)
+                .addContainerGap(64, Short.MAX_VALUE))
+        );
+
+        info.setBackground(new java.awt.Color(255, 204, 102));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Information");
+
+        javax.swing.GroupLayout infoLayout = new javax.swing.GroupLayout(info);
+        info.setLayout(infoLayout);
+        infoLayout.setHorizontalGroup(
+            infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jLabel1)
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        infoLayout.setVerticalGroup(
+            infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel1)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(orders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(cart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(orders, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(387, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(search);
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel5MouseClicked(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("AR JULIAN", 0, 18)); // NOI18N
+        jLabel5.setText("search");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(33, 33, 33))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addContainerGap())
+        );
+
+        jarab201.setBackground(new java.awt.Color(102, 102, 255));
+        jarab201.setForeground(new java.awt.Color(255, 51, 51));
+        jarab201.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jarab201MouseClicked(evt);
+            }
+        });
+
+        incarab201.setBackground(new java.awt.Color(255, 255, 204));
+        incarab201.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        incarab201.setText("+");
+        incarab201.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                incarab201MouseClicked(evt);
+            }
+        });
+
+        decarab201.setBackground(new java.awt.Color(255, 255, 204));
+        decarab201.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        decarab201.setText("-");
+
+        arab201_price.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setText("39 SR");
+
+        javax.swing.GroupLayout arab201_priceLayout = new javax.swing.GroupLayout(arab201_price);
+        arab201_price.setLayout(arab201_priceLayout);
+        arab201_priceLayout.setHorizontalGroup(
+            arab201_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(arab201_priceLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel8)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        arab201_priceLayout.setVerticalGroup(
+            arab201_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(arab201_priceLayout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jisls201.setBackground(new java.awt.Color(102, 102, 255));
+        jisls201.setForeground(new java.awt.Color(255, 51, 51));
+        jisls201.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jisls201MouseClicked(evt);
+            }
+        });
+
+        incisls201.setBackground(new java.awt.Color(255, 255, 204));
+        incisls201.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        incisls201.setText("+");
+        incisls201.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incisls201ActionPerformed(evt);
+            }
+        });
+
+        isls401_price.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("31 SR");
+
+        javax.swing.GroupLayout isls401_priceLayout = new javax.swing.GroupLayout(isls401_price);
+        isls401_price.setLayout(isls401_priceLayout);
+        isls401_priceLayout.setHorizontalGroup(
+            isls401_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(isls401_priceLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel9)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        isls401_priceLayout.setVerticalGroup(
+            isls401_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(isls401_priceLayout.createSequentialGroup()
+                .addComponent(jLabel9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        decisls401.setBackground(new java.awt.Color(255, 255, 204));
+        decisls401.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        decisls401.setText("-");
+
+        jisls401.setBackground(new java.awt.Color(102, 102, 255));
+        jisls401.setForeground(new java.awt.Color(255, 51, 51));
+        jisls401.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jisls401MouseClicked(evt);
+            }
+        });
+
+        incisls401.setBackground(new java.awt.Color(255, 255, 204));
+        incisls401.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        incisls401.setText("+");
+        incisls401.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                incisls401MouseClicked(evt);
+            }
+        });
+        incisls401.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incisls401ActionPerformed(evt);
+            }
+        });
+
+        isls201_price.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("31 SR");
+
+        javax.swing.GroupLayout isls201_priceLayout = new javax.swing.GroupLayout(isls201_price);
+        isls201_price.setLayout(isls201_priceLayout);
+        isls201_priceLayout.setHorizontalGroup(
+            isls201_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(isls201_priceLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel10)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        isls201_priceLayout.setVerticalGroup(
+            isls201_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(isls201_priceLayout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        decisls201.setBackground(new java.awt.Color(255, 255, 204));
+        decisls201.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        decisls201.setText("-");
+
+        jarab101.setBackground(new java.awt.Color(102, 102, 255));
+        jarab101.setForeground(new java.awt.Color(255, 51, 51));
+        jarab101.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jarab101MouseClicked(evt);
+            }
+        });
+
+        inisls301.setBackground(new java.awt.Color(255, 255, 204));
+        inisls301.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        inisls301.setText("+");
+        inisls301.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inisls301ActionPerformed(evt);
+            }
+        });
+
+        isls301_price.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setText("31 SR");
+
+        javax.swing.GroupLayout isls301_priceLayout = new javax.swing.GroupLayout(isls301_price);
+        isls301_price.setLayout(isls301_priceLayout);
+        isls301_priceLayout.setHorizontalGroup(
+            isls301_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(isls301_priceLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel11)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        isls301_priceLayout.setVerticalGroup(
+            isls301_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(isls301_priceLayout.createSequentialGroup()
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        deisls301.setBackground(new java.awt.Color(255, 255, 204));
+        deisls301.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deisls301.setText("-");
+
+        jPanel4.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel4.setForeground(new java.awt.Color(255, 153, 51));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("AR JULIAN", 0, 24)); // NOI18N
+        jLabel12.setText("home");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel12)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addContainerGap())
+        );
+
+        jisls301.setBackground(new java.awt.Color(102, 102, 255));
+        jisls301.setForeground(new java.awt.Color(255, 51, 51));
+        jisls301.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jisls301MouseClicked(evt);
+            }
+        });
+
+        incarab101.setBackground(new java.awt.Color(255, 255, 204));
+        incarab101.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        incarab101.setText("+");
+        incarab101.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incarab101ActionPerformed(evt);
+            }
+        });
+
+        decarab101.setBackground(new java.awt.Color(255, 255, 204));
+        decarab101.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        decarab101.setText("-");
+
+        arab101_price.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setText("31 SR");
+
+        javax.swing.GroupLayout arab101_priceLayout = new javax.swing.GroupLayout(arab101_price);
+        arab101_price.setLayout(arab101_priceLayout);
+        arab101_priceLayout.setHorizontalGroup(
+            arab101_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(arab101_priceLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel13)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        arab101_priceLayout.setVerticalGroup(
+            arab101_priceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(arab101_priceLayout.createSequentialGroup()
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jisls101.setBackground(new java.awt.Color(102, 102, 255));
+        jisls101.setForeground(new java.awt.Color(255, 51, 51));
+        jisls101.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jisls101MouseClicked(evt);
+            }
+        });
+
+        incisls101.setBackground(new java.awt.Color(255, 255, 204));
+        incisls101.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        incisls101.setText("+");
+        incisls101.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                incisls101ActionPerformed(evt);
+            }
+        });
+
+        decisls01.setBackground(new java.awt.Color(255, 255, 204));
+        decisls01.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        decisls01.setText("-");
+        decisls01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                decisls01ActionPerformed(evt);
+            }
+        });
+
+        arab101_price1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setText("31 SR");
+
+        javax.swing.GroupLayout arab101_price1Layout = new javax.swing.GroupLayout(arab101_price1);
+        arab101_price1.setLayout(arab101_price1Layout);
+        arab101_price1Layout.setHorizontalGroup(
+            arab101_price1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(arab101_price1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel14)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        arab101_price1Layout.setVerticalGroup(
+            arab101_price1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(arab101_price1Layout.createSequentialGroup()
+                .addComponent(jLabel14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(273, 273, 273)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 692, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(530, 530, 530))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(441, 441, 441)
+                                .addComponent(jLabel3))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(deisls301)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(isls301_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inisls301))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(615, 615, 615)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(301, 301, 301)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(decarab201)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(arab201_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(incarab201))
+                                    .addComponent(jarab201, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel7))
+                            .addComponent(jisls301, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jisls401, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jarab101, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(decisls401)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(isls401_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(incisls401))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(decarab101)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(arab101_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(incarab101))))
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(decisls201)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(isls201_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(incisls201))
+                                .addComponent(jisls101, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(decisls01)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(arab101_price1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(incisls101))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(816, 816, 816)
+                        .addComponent(jisls201, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jarab201, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(arab201_price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(incarab201, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(decarab201, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jisls201, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                                        .addComponent(jisls401, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(isls401_price, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(decisls401, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(incisls401, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(decisls201, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(isls201_price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(incisls201, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jisls301, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                            .addComponent(jarab101, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jisls101, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(incarab101, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(incisls101, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(decisls01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(arab101_price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(decarab101, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(inisls301, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(deisls301, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(arab101_price1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGap(7, 7, 7))))
+                    .addComponent(isls301_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(74, 74, 74)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131)
+                .addComponent(jLabel3))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 48, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void incarab201MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incarab201MouseClicked
+
+        if(avaarab201==false){
+            UIManager.put("OptionPane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("Button.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.WHITE);
+            UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+                "AR JULIAN", Font.BOLD, 16)));
+    JOptionPane.showMessageDialog(null,"Sorry, This book isn't available", "",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        UIManager.put("OptionPane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("Button.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.WHITE);
+        UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+            "AR JULIAN", Font.BOLD, 16)));
+JOptionPane.showMessageDialog(null,"book is added to cart", "",JOptionPane.INFORMATION_MESSAGE);
+}
+    }//GEN-LAST:event_incarab201MouseClicked
+
+    private void incisls201ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incisls201ActionPerformed
+
+        if(avaisls201==false){
+            UIManager.put("OptionPane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("Button.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.WHITE);
+            UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+                "AR JULIAN", Font.BOLD, 16)));
+    JOptionPane.showMessageDialog(null,"Sorry, This book isn't available", "",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        UIManager.put("OptionPane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("Button.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.WHITE);
+        UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+            "AR JULIAN", Font.BOLD, 16)));
+JOptionPane.showMessageDialog(null,"book is added to cart", "",JOptionPane.INFORMATION_MESSAGE);
+}
+    }//GEN-LAST:event_incisls201ActionPerformed
+
+    private void incisls401MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incisls401MouseClicked
+
+        if(avaisls401==false){
+            UIManager.put("OptionPane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("Button.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.WHITE);
+            UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+                "AR JULIAN", Font.BOLD, 16)));
+    JOptionPane.showMessageDialog(null,"Sorry, This book isn't available", "",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        UIManager.put("OptionPane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("Button.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.WHITE);
+        UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+            "AR JULIAN", Font.BOLD, 16)));
+JOptionPane.showMessageDialog(null,"book is added to cart", "",JOptionPane.INFORMATION_MESSAGE);
+}
+    }//GEN-LAST:event_incisls401MouseClicked
+
+    private void incisls401ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incisls401ActionPerformed
+
+        if(avaisls401==false){
+            UIManager.put("OptionPane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("Button.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.WHITE);
+            UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+                "AR JULIAN", Font.BOLD, 16)));
+    JOptionPane.showMessageDialog(null,"Sorry, This book isn't available", "",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        UIManager.put("OptionPane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("Button.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.WHITE);
+        UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+            "AR JULIAN", Font.BOLD, 16)));
+JOptionPane.showMessageDialog(null,"book is added to cart", "",JOptionPane.INFORMATION_MESSAGE);
+}
+    }//GEN-LAST:event_incisls401ActionPerformed
+
+    private void inisls301ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inisls301ActionPerformed
+
+        if(avaisls301==false){
+            UIManager.put("OptionPane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("Button.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.WHITE);
+            UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+                "AR JULIAN", Font.BOLD, 16)));
+    JOptionPane.showMessageDialog(null,"Sorry, This book isn't available", "",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        UIManager.put("OptionPane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("Button.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.WHITE);
+        UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+            "AR JULIAN", Font.BOLD, 16)));
+JOptionPane.showMessageDialog(null,"book is added to cart", "",JOptionPane.INFORMATION_MESSAGE);
+}
+    }//GEN-LAST:event_inisls301ActionPerformed
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        selectbookstore sn = new selectbookstore();
+        sn.setVisible(true);
+    }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void incarab101ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incarab101ActionPerformed
+
+        if(avaarab101==false){
+            UIManager.put("OptionPane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("Button.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.WHITE);
+            UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+                "AR JULIAN", Font.BOLD, 16)));
+    JOptionPane.showMessageDialog(null,"Sorry, This book isn't available", "",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        UIManager.put("OptionPane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("Button.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.WHITE);
+        UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+            "AR JULIAN", Font.BOLD, 16)));
+JOptionPane.showMessageDialog(null,"book is added to cart", "",JOptionPane.INFORMATION_MESSAGE);
+}
+    }//GEN-LAST:event_incarab101ActionPerformed
+
+    private void incisls101ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incisls101ActionPerformed
+        if(avaisls101==false){
+            UIManager.put("OptionPane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("Button.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+            UIManager.put("Panel.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageForeground", Color.WHITE);
+            UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+            UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+            UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+                "AR JULIAN", Font.BOLD, 16)));
+    JOptionPane.showMessageDialog(null,"Sorry, This book isn't available", "",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        UIManager.put("OptionPane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.RED);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("Button.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageBackground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.textbackground", Color.DARK_GRAY);
+        UIManager.put("Panel.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageForeground", Color.WHITE);
+        UIManager.put("OptionPane.warningDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.warningDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.questionDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.border.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.background", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.foreground", Color.DARK_GRAY);
+        UIManager.put("OptionPane.errorDialog.titlePane.shadow", Color.DARK_GRAY);
+        UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(
+            "AR JULIAN", Font.BOLD, 16)));
+JOptionPane.showMessageDialog(null,"book is added to cart", "",JOptionPane.INFORMATION_MESSAGE);
+}
+    }//GEN-LAST:event_incisls101ActionPerformed
+
+    private void decisls01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decisls01ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decisls01ActionPerformed
+
+    private void jarab201MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jarab201MouseClicked
+         try {
+         BookInterface bi = new BookInterface();
+         bi.displayBook(book4);
+bi.setVisible(true);
+ 
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(science_alkha.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_jarab201MouseClicked
+
+    private void jisls401MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jisls401MouseClicked
+        try {
+         BookInterface bi = new BookInterface();
+         bi.displayBook(book3);
+bi.setVisible(true);
+ 
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(science_alkha.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_jisls401MouseClicked
+
+    private void jisls201MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jisls201MouseClicked
+     try {
+         BookInterface bi = new BookInterface();
+         bi.displayBook(book2);
+bi.setVisible(true);
+ 
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(science_alkha.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_jisls201MouseClicked
+
+    private void jisls101MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jisls101MouseClicked
+    try {
+         BookInterface bi = new BookInterface();
+         bi.displayBook(book6);
+bi.setVisible(true);
+ 
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(science_alkha.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_jisls101MouseClicked
+
+    private void jarab101MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jarab101MouseClicked
+       try {
+         BookInterface bi = new BookInterface();
+         bi.displayBook(book5);
+bi.setVisible(true);
+ 
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(science_alkha.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_jarab101MouseClicked
+
+    private void jisls301MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jisls301MouseClicked
+        try {
+         BookInterface bi = new BookInterface();
+         bi.displayBook(book1);
+bi.setVisible(true);
+ 
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(science_alkha.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }//GEN-LAST:event_jisls301MouseClicked
+
+    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
+        String searchBook = search.getText();
+    
+        SearchBook_Interface bi = new SearchBook_Interface();
+        switch (searchBook) {
+            case "islamic culture 1 " :
+            case "isls101" :
+                bi.displayBook(book6);
+                bi.setVisible(true);
+            case "islamic culture 3":
+            case "isls301":
+                bi.displayBook(book1);
+                bi.setVisible(true);
+                break;
+            case "islamic culture 2":
+            case "isls201":
+                bi.displayBook(book2);
+                bi.setVisible(true);
+                break;
+            case "islamic culture 4":
+            case "isls401":
+                bi.displayBook(book3);
+                bi.setVisible(true);
+                break;
+            case "arabic 2" : 
+            case "arab201":
+                bi.displayBook(book4);
+                bi.setVisible(true);break;
+            case "arab101":
+            case "arabic 1":
+                bi.displayBook(book5);
+                bi.setVisible(true);break;
+                     default: SearchBook_noresults n = new SearchBook_noresults();
+                  n.setVisible(true);
+        }
+    }//GEN-LAST:event_jPanel5MouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(generalsub_alhuda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(generalsub_alhuda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(generalsub_alhuda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(generalsub_alhuda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new generalsub_alhuda().setVisible(true);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(generalsub_alhuda.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel arab101_price;
+    private javax.swing.JPanel arab101_price1;
+    private javax.swing.JPanel arab201_price;
+    private javax.swing.JPanel cart;
+    private javax.swing.JButton decarab101;
+    private javax.swing.JButton decarab201;
+    private javax.swing.JButton decisls01;
+    private javax.swing.JButton decisls201;
+    private javax.swing.JButton decisls401;
+    private javax.swing.JButton deisls301;
+    private javax.swing.JButton incarab101;
+    private javax.swing.JButton incarab201;
+    private javax.swing.JButton incisls101;
+    private javax.swing.JButton incisls201;
+    private javax.swing.JButton incisls401;
+    private javax.swing.JPanel info;
+    private javax.swing.JButton inisls301;
+    private javax.swing.JPanel isls201_price;
+    private javax.swing.JPanel isls301_price;
+    private javax.swing.JPanel isls401_price;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jarab101;
+    private javax.swing.JLabel jarab201;
+    private javax.swing.JLabel jisls101;
+    private javax.swing.JLabel jisls201;
+    private javax.swing.JLabel jisls301;
+    private javax.swing.JLabel jisls401;
+    private javax.swing.JPanel orders;
+    private javax.swing.JTextPane search;
+    // End of variables declaration//GEN-END:variables
+
+}
